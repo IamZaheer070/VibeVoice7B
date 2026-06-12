@@ -1,0 +1,24 @@
+PYTHONPATH=/home/ubuntu/VibeVoice-community \
+python /home/ubuntu/VibeVoice-community/demo/cli_runner_7b.py \
+  --model_path /home/ubuntu/VibeVoice-community/VibeVoice-Large \
+  --txt_path /home/ubuntu/VibeVoice-community/demo/text_examples/uscis_script_persona_09_extracted.txt \
+  --speaker_names rachel dylan mayur \
+  --output_dir /home/ubuntu/VibeVoice-community/outputs/uscis_script_persona_09
+
+
+
+  ###To download model weights
+  !huggingface-cli download \
+    vibevoice/VibeVoice-7B \
+    --local-dir ./VibeVoice-7B
+
+
+    !python /content/VibeVoice/demo/cli_runner_7b.py \
+    --model_path /content/VibeVoice-7B \
+    --txt_path /content/VibeVoice/demo/text_examples/script1.txt \
+    --speaker_names riley Alice elio \
+    --quality studio \
+    --cfg_scale 1.6 \
+    --inference_steps 40 \
+    --seed 42 \
+    --output_dir /content/outputs
